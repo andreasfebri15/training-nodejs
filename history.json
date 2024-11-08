@@ -1,0 +1,23 @@
+[
+  {
+    "operation": "substract",
+    "valueA": 10,
+    "valueB": 5,
+    "result": 5,
+    "date": "2024-11-06T09:22:33.695Z"
+  },
+  {
+    "operation": "substract",
+    "valueA": 10,
+    "valueB": 5,
+    "result": 5,
+    "date": "2024-11-07T02:00:12.569Z"
+  },
+  {
+    "operation": "add",
+    "valueA": 3,
+    "valueB": 2,
+    "result": 5,
+    "date": "2024-11-07T02:17:04.281Z"
+  }
+]
