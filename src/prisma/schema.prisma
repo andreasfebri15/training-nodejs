@@ -42,3 +42,38 @@ model ArticleTag {
   
   @@id([articleId, tagId])
 }
+
+model Car {
+    id   String   @id @default(uuid())
+    image String 
+    name String 
+    model String
+    variant String
+    price Float
+    isNew Boolean
+    IklanId String
+    iklan      Iklan    @relation("CarIklan", fields: [IklanId], references: [id])
+    blogs    Blog[]  @relation("CarBlogs") 
+
+}
+
+model Iklan {
+ id   String   @id @default(uuid())
+ name String
+ content String
+ discount Int
+ image String
+ car Car[] @relation("CarIklan")
+}
+
+model Blog {
+  id String @id @default(uuid())
+  title String
+  desc String
+  content String
+  image String
+  cars     Car[]   @relation("CarBlogs")
+}
+
+
+

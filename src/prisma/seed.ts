@@ -44,7 +44,37 @@ const main = async () => {
     },
   });
 
-  console.log({ promo, tags, article });
+  const iklan = await prisma.iklan.create({
+    data: {
+      name: "Iklan",
+      content: "This is a iklan sample article about Prisma...",
+      discount: 10,
+      image: "https://via.placeholder.com/150",
+    },
+  });
+
+  const blog = await prisma.blog.create({
+    data: {
+      title: "blog",
+      desc: "This is a blog sample article about Prisma...",
+      content: "This is a sample article about Prisma...",
+      image: "https://via.placeholder.com/150",
+    },
+  });
+
+  const car = await prisma.car.create({
+    data: {
+      image: "https://via.placeholder.com/150",
+      name: "Car",
+      model: "Model",
+      variant: "Variant",
+      price: 10000,
+      isNew: true,
+      IklanId: iklan.id,
+    },
+  });
+
+  console.log({ promo, tags, article, iklan, blog, car });
 };
 
 main()

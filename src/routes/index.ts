@@ -8,6 +8,10 @@ import {
 } from "../middleware";
 import mathRouter from "./math.routes";
 import authRouter from "./auth.routes";
+import promoRouter from "./promo.routes";
+import articleRouter from "./article.routes";
+import tagRouter from "./tags.routes";
+import swaggerRouter from "./swagger.route";
 const router = Router();
 
 router.get("/try", (req: Request, res: Response) => {
@@ -156,5 +160,9 @@ router.get("/asd", (req: Request, res: Response) => {
 
 router.use("/math", mathRouter);
 router.use("/auth", authRouter);
+router.use("/promo", promoRouter);
+router.use("/article", articleRouter);
+router.use("/tag", tagRouter);
+router.use("/swagger", swaggerRouter);
 router.use(errorHandler);
 export default router;
