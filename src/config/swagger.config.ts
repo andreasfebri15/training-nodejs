@@ -11,7 +11,13 @@ const swaggerOptions = {
     },
     tags: [
       {
-        name: "Promo",
+        name: "Car",
+      },
+      {
+        name: "Iklan",
+      },
+      {
+        name: "Blog",
       },
     ],
     servers: [

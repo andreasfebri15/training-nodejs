@@ -53,7 +53,7 @@ model Car {
     isNew Boolean
     IklanId String
     iklan      Iklan    @relation("CarIklan", fields: [IklanId], references: [id])
-    blogs    Blog[]  @relation("CarBlogs") 
+    blogs    BlogCar[]  
 
 }
 
@@ -72,8 +72,24 @@ model Blog {
   desc String
   content String
   image String
-  cars     Car[]   @relation("CarBlogs")
+  blogs  BlogCar[]   
 }
 
+// model BlogCar {
+//   car Car @relation(fields: [carId], references: [id]) 
+//   blog Blog @relation(fields: [blogId], references: [id]) 
+//   carId String
+//   blogId String
+//   @@id([carId, blogId])
+// }
+
+model BlogCar {
+  carId String 
+  car Car @relation(fields: [carId], references: [id]) 
+  blogId String 
+  blog Blog @relation(fields: [blogId], references: [id]) 
+  
+  @@id([carId, blogId])
+}
 
 

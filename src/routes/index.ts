@@ -12,6 +12,9 @@ import promoRouter from "./promo.routes";
 import articleRouter from "./article.routes";
 import tagRouter from "./tags.routes";
 import swaggerRouter from "./swagger.route";
+import carRouter from "./car.routes";
+import iklanRouter from "./iklan.route";
+import blogRouter from "./blog.routes";
 const router = Router();
 
 router.get("/try", (req: Request, res: Response) => {
@@ -164,5 +167,8 @@ router.use("/promo", promoRouter);
 router.use("/article", articleRouter);
 router.use("/tag", tagRouter);
 router.use("/swagger", swaggerRouter);
+router.use("/car", carRouter);
+router.use("/iklan", iklanRouter);
+router.use("/blog", blogRouter);
 router.use(errorHandler);
 export default router;
